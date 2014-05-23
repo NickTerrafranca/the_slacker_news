@@ -19,7 +19,7 @@
       </li>
 
       <li>
-        <a href="comments.html">Comments |</a>
+        <a href="">Comments |</a>
       </li>
 
       <li>
@@ -41,30 +41,11 @@
     </ul>
   </div>
 </header>
-
 <body>
-  <div class="form_container">
-    <form action="/posts" method="post">
-
-      <label for="submittion_title">Submission Title:</label>
-      <input type="text" id="submittion_title" name="title" />
-
-      <label for="url">Submission Web Address:</label>
-      <input type="url" id="url" name="url" />
-
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description" />
-
-      <input type="submit" />
-
-    </form>
-  </div>
   <div class="article-container">
-  <ol class="article-list">
 
     <%= yield %>
 
-  </o>
   </div>
 </body>
 </html>

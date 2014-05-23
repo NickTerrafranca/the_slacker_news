@@ -1,14 +1,39 @@
-<% @data_in.each do |entry| %>
-<span><a href="<%= "/article/#{entry[:title]}" %>" %>
-  <%="#{entry[:title]}"%>
-</a>
-</span>
+<div class="form_container">
+  <form action="/posts" method="post">
 
-<cite class="cite"><%="(#{entry[:url]})"%></cite>
+    <label for="submittion_title">Submission Title:</label>
+    <input type="text" id="submittion_title" name="title" />
 
-<div class="article-details"><%="#{entry[:description]}"%></div>
+    <label for="url">Submission Web Address:</label>
+    <input type="url" id="url" name="url" />
 
-<% end %>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" />
 
+    <input type="submit" />
 
+  </form>
+</div>
+<div>
+  <ol>
+    <% @data_in.each do |entry| %>
+      <li>
+        <span class="article_title">
+          <a href="<%= "/article/#{entry[:title]}" %>">
+            <%="#{entry[:title]}"%>
+          </a>
+        </span>
+
+        <cite class="cite">
+          <%="(#{entry[:url]})"%>
+        </cite>
+
+        <div class="article-details">
+          <%="#{entry[:description]}"%>
+        </div>
+      </li>
+
+    <% end %>
+  </ol>
+</div>
 

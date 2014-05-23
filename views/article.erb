@@ -1,11 +1,19 @@
-<h2><%= @article[0][:title]%></h2>
 
-<li>
-  <div class="article">
-    <% @article.each do |attribute| %>
-    <a href="<%= "#{attribute[:url]}" %>"><%= attribute[:url] %></a>
-    <p><% attribute[:description]%></p>
-    <% end %>
+<% @article.each do |attribute| %>
+  <div class="each_article">
+    <li>
+      <span class="article_title">
+        <%= "#{attribute[:title]}"%>
+      </span>
+    </li>
+    <li class="article_link">
+      <a class="article_link" href="<%= "#{attribute[:url]}" %>">
+        <%= "#{attribute[:url] }" %>
+      </a>
+    </li>
+      <p class="description">
+        <%= "#{attribute[:description]}" %>
+      </p>
   </div>
-</li>
+<% end %>
 

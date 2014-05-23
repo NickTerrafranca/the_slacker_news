@@ -1,0 +1,66 @@
+body {
+  margin: 10;
+  font-family: 'Verdana', 'san-serif';
+  font-size:10pt;
+  color:#828282;
+}
+
+.title {
+  font-size: 14
+  color #000000
+}
+
+.navigation-container {
+  margin: 0px 100px 0px 100px;
+  background: #ff4d00;
+  color: #000000;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: none;
+  padding: 4px;
+}
+
+.nav > li > a {
+
+  color: #000000;
+  text-decoration: none;
+}
+.title a {
+  font-size: 15px;
+  text-decoration: bold;
+}
+
+.article-container {
+  margin: 0px 100px 0px 100px;
+  background: #f6f7ef;
+}
+
+.article-list{
+}
+
+.article {
+  margin: 5px;
+  padding: 5px 0;
+}
+
+.article a {
+  color: #000000;
+  text-decoration: none;
+
+}
+.article-details {
+  font-size: 7pt;
+  color: #828282;
+}
+
+.article-details a {
+  font-size: 7pt;
+  color: #828282;
+}
+
+.login a {
+  text-align: right;
+}

@@ -1,0 +1,11 @@
+<h2><%= @article[0][:title]%></h2>
+
+<li>
+  <div class="article">
+    <% @article.each do |attribute| %>
+    <a href="<%= "#{attribute[:url]}" %>"><%= attribute[:url] %></a>
+    <p><% attribute[:description]%></p>
+    <% end %>
+  </div>
+</li>
+

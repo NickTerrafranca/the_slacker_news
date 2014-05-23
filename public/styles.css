@@ -5,6 +5,12 @@ body {
   color:#828282;
 }
 
+.form_container{
+  margin: 0px 100px 0px 100px;
+  background: #b8ffb7
+
+}
+
 .title {
   font-size: 14
   color #000000
@@ -36,9 +42,6 @@ body {
 .article-container {
   margin: 0px 100px 0px 100px;
   background: #f6f7ef;
-}
-
-.article-list{
 }
 
 .article {

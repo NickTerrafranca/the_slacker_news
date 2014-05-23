@@ -1,87 +1,14 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Slacker News</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <header>
-    <div class="navigation-container">
-      <ul class="nav">
-        <li class="title">
-          <a href="#">Slacker News</a>
-        </li>
-        <li>
-          <a href="#">News |</a>
-        </li>
-        <li>
-          <a href="comments.html">Comments |</a>
-        </li>
-        <li>
-          <a href="#">Ask |</a>
-        </li>
-        <li>
-          <a href="#">Jobs |</a>
-        </li>
-        <li>
-          <a href="#">Submit</a>
-        </li>
-        <li class="login">
-          <a href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <body>
+<% @data_in.each do |entry| %>
+<span><a href="<%= "/article/#{entry[:title]}" %>" %>
+  <%="#{entry[:title]}"%>
+</a>
+</span>
 
-    <div class="article-container">
-      <ol class="article-list">
-        <div class="controler_input">
-          <form action="/posts" method="post">
+<cite class="cite"><%="(#{entry[:url]})"%></cite>
 
-            <label for="submittion_title">Submission Title:</label>
-            <input type="text" id="submittion_title" name="title" />
+<div class="article-details"><%="#{entry[:description]}"%></div>
 
-            <label for="url">Submission Web Address:</label>
-            <input type="url" id="url" name="url" />
+<% end %>
 
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" />
-
-            <input type="submit" />
-
-          </form>
-
-          <div class="article">
-            <span><a href="https://www.firebase.com/blog/2013-08-15-firebase-leaves-beta-today.html">Firebase Leaves Beta Today</a><span>
-            <cite class="cite">(firebase.com)</cite>
-            <div class="article-details">63 points by <a href="#">lyime</a> 56 minutes ago | 17 <a href="#">comments</a> </div>
-          </div>
-        </li>
-          <ul>
-            <% @data_in.each do |entry| %>
-            <li id="submittion_title">
-              <a href="" %><%="#{entry[:title]}"%></a>
-            </li>
-
-            <div class="subentry">
-              <li id="url">
-                <a href="" %> <%="#{entry[:url]}"%></a>
-              </li>
-
-              <li id="description">
-                <a href="" %><%="#{entry[:description]}"%></a>
-              </li>
-
-            </div>
-
-          </ul>
-          <% end %>
-        </ol>
-      </div>
-    </div>
-
-  </body>
-  </html>
 
 

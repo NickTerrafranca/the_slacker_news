@@ -1,15 +1,17 @@
 require 'sinatra'
-require 'csv'
+require 'pg'
 require 'pry'
-ARTICLES = 'articles.csv'
 
-def read_article_data(file_name)
-  articles = []
-  CSV.foreach(file_name, headers: true, header_converters: :symbol) do |row|
-    articles << row.to_hash
+def db_connection
+  begin
+    connection = PG.connect(dbname: 'movies')
+    yield(connection)
+  ensure
+    connection.close
   end
-  articles
 end
+
+
 
 get('/') do
   @data_in = read_article_data(ARTICLES)

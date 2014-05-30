@@ -1,0 +1,23 @@
+<div class="article-container">
+  <ol>
+    <% @article.each do |article| %>
+      <li>
+        <span class="article_title">
+           <%= "#{article['title']}" %>
+        </span>
+
+        <span class="article_url">
+          <a href="<%= "#{article['url']}" %>" target="_blank">
+            <%= "#{article['url']}" %>
+          </a>
+        </span>
+
+        <div class="article-details">
+          <%="#{article['description']}"%>
+        </div>
+      </li>
+      <br>
+    <% end %>
+  </ol>
+</div>
+

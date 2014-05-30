@@ -35,9 +35,19 @@ get '/submit' do
   erb :show
 end
 
+get '/articles/:id' do
+  article_id = params[:id]
+  query = 'SELECT articles.id, articles.title, articles.url, articles.description
+  FROM articles
+  WHERE articles.id = $1;'
+  @article = db_connection do |conn|
+    conn.exec_params(query, [article_id])
+    end
+  erb :article
+end
 
 post '/posts' do
   save_article(params["title"], params["url"], params["description"])
-  # binding.pry
   redirect '/'
 end
+

@@ -1,4 +1,4 @@
-
+<!-- <h3>The best way to waste time...</h3> -->
 <div class="article-container">
   <ol>
     <% @content.each do |article| %>
@@ -8,13 +8,18 @@
         </span>
 
         <span class="article_url">
-        <a href="<%= "#{article['url']}" %>" target="_blank">
-          <%= "#{article['url']}" %>
-           </a>
+          <a href="<%= "#{article['url']}" %>" target="_blank">
+            <%= "#{article['url']}" %>
+          </a>
         </span>
 
         <div class="article-details">
           <%="#{article['description']}"%>
+        </div>
+        <div class="article_comment">
+          <a href="<%= "/articles/#{article["id"]}" %>">
+            Comment
+          </a>
         </div>
       </li>
       <br>

@@ -24,3 +24,6 @@
 
 -- SELECT * FROM articles;
 -- SELECT * FROM comments;
+-- DELETE FROM articles WHERE ________;
+-- UPDATE table_name SET column_name = new_value WHERE conditional_filter;
+-- UPDATE articles SET title = This is way cool! WHERE id = 1;

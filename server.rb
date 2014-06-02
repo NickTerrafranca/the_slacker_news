@@ -3,7 +3,6 @@ require 'sinatra'
 require_relative 'methods'
 
 get '/' do
-
   @content = display_all_articles
   erb :index
 end
@@ -29,7 +28,9 @@ end
 post '/articles/:id/comment' do
   article_id = params[:id]
   article_comment = params["comment"]
-  save_comment(article_id, article_comment)
+  unless article_comment == ''
+    save_comment(article_id, article_comment)
+  end
   display_comment
   redirect "/articles/#{article_id}"
 end

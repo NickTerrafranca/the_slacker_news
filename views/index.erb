@@ -1,4 +1,3 @@
-<!-- <h3>The best way to waste time...</h3> -->
 <div class="article-container">
   <ol>
     <% @content.each do |article| %>
@@ -16,6 +15,10 @@
         <div class="article-details">
           <%="#{article['description']}"%>
         </div>
+        <div class="article-time-stamp">
+          <%= "#{article['created_at']}" %>
+        </div>
+
         <div class="article_comment">
           <a href="<%= "/articles/#{article["id"]}" %>">
             Comment

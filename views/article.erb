@@ -1,5 +1,5 @@
 <div class="article-container">
-  <ol>
+  <ul>
       <li>
         <span class="article_title">
            <%= "#{@article['title']}" %>
@@ -16,9 +16,20 @@
         </div>
       </li>
       <br>
-  </ol>
+  </ul>
 </div>
 
+<div class="comment">
+  <ol>
+    <% @comment.each do |comment| %>
+      <li>
+        <%= comment['body'] %>
+        <p><%= comment['created_at'] %></p>
+      </li>
+    <%end%>
+  </ol>
+
+</div>
 
 <div class="comment_field">
   <p>Comment on: <%= "#{@article['title']} "%></p>
@@ -30,5 +41,3 @@
     <input type="submit" value="Submit" />
   </form>
 </div>
-
-<!-- /articles/?:id=/comment -->

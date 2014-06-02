@@ -3,7 +3,8 @@ require 'sinatra'
 require_relative 'methods'
 
 get '/' do
-  display_all_articles(@content)
+
+  @content = display_all_articles
   erb :index
 end
 
@@ -11,13 +12,16 @@ get '/articles' do
   erb :show
 end
 
-post '/articles' do
-  save_article(params["title"], params["url"], params["description"])
+post '/articles/posts' do
+  unless params["title"] = '' || params["url"] = '' || params["description"] = ''
+    save_article(params["title"], params["url"], params["description"])
+  end
   redirect '/'
 end
 
 get '/articles/:id' do
-   select_article(@article_id, @article)
+  @article_id = params[:id]
+   @article = select_article(@article_id)
    @comment = display_comment
   erb :article
 end
@@ -29,3 +33,7 @@ post '/articles/:id/comment' do
   display_comment
   redirect "/articles/#{article_id}"
 end
+
+
+#add pagination
+#add title search

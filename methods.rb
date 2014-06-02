@@ -9,25 +9,26 @@ def db_connection
   end
 end
 
-def display_all_articles(content)
-  query = 'SELECT articles.id, articles.title, articles.url, articles.description
+
+
+def display_all_articles
+  query = 'SELECT articles.id, articles.title, articles.url, articles.description, articles.created_at
   FROM articles
-  ORDER BY created_at
-  LIMIT 20;'
-  @content = db_connection do |conn|
+  ORDER BY created_at DESC
+  LIMIT 15;'
+  content = db_connection do |conn|
     conn.exec(query)
   end
 end
 
-def select_article(article_id, article)
-@article_id = params[:id]
+def select_article(article_id)
   query = 'SELECT articles.id, articles.title, articles.url, articles.description
   FROM articles
   WHERE articles.id = $1;'
   result = db_connection do |conn|
     conn.exec_params(query, [@article_id])
   end
-  @article = result.first
+  article = result.first
 end
 
 def display_comment

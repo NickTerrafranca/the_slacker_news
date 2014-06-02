@@ -7,8 +7,12 @@ body {
 
 .form_container {
   margin: 0px 100px 0px 100px;
-  background: #b8ffb7
+  padding: 10px;
+  background: #b8ffb7;
 
+}
+#description{
+  display: inline-block;
 }
 
 .title {
@@ -100,4 +104,10 @@ body {
   font-size: 14px;
   color: red;
 }
-
+.comment_field {
+  margin: 0px 100px 0px 100px;
+  background: #b8ffb7
+}
+.comment_field p {
+  color: #000000;
+}

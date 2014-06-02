@@ -1,31 +1,34 @@
 <div class="article-container">
   <ol>
-    <% @article.each do |article| %>
       <li>
         <span class="article_title">
-           <%= "#{article['title']}" %>
+           <%= "#{@article['title']}" %>
         </span>
 
         <span class="article_url">
-          <a href="<%= "#{article['url']}" %>" target="_blank">
-            <%= "#{article['url']}" %>
+          <a href="<%= "#{@article['url']}" %>" target="_blank">
+            <%= "#{@article['url']}" %>
           </a>
         </span>
 
         <div class="article-details">
-          <%="#{article['description']}"%>
+          <%="#{@article['description']}"%>
         </div>
       </li>
       <br>
-    <% end %>
   </ol>
 </div>
 
 
 <div class="comment_field">
-  <form action="/comments" method="post">
-    <label for="comment">Comment:</label>
+  <p>Comment on: <%= "#{@article['title']} "%></p>
+  <form action="/articles/<%= @article['id'] %>/comment" method="post">
+    <label for="comment">Leave a Comment:</label>
+
       <input type="text" id="comment" name="comment" />
+
     <input type="submit" value="Submit" />
   </form>
 </div>
+
+<!-- /articles/?:id=/comment -->

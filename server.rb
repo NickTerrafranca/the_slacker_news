@@ -3,7 +3,8 @@ require 'sinatra'
 require_relative 'methods'
 
 get '/' do
-  @content = display_all_articles
+  @page = params[:page].to_i
+  @content = display_all_articles(@page)
   erb :index
 end
 
@@ -20,8 +21,8 @@ end
 
 get '/articles/:id' do
   @article_id = params[:id]
-   @article = select_article(@article_id)
-   @comment = display_comment
+  @article = select_article(@article_id)
+  @comment = display_comment
   erb :article
 end
 

@@ -1,5 +1,6 @@
 <div class="article-container">
   <ol>
+    <% article_count = 0%>
     <% @content.each do |article| %>
       <li>
         <span class="article_title">
@@ -26,7 +27,16 @@
         </div>
       </li>
       <br>
+      <% article_count += 1%>
     <% end %>
   </ol>
+</div>
+<div class="page_nav">
+  <% if @page >= 1 %>
+    <a class="nav" href="/?page=<%=(@page - 1) %>"><-Previous page</a>
+  <%end%>
+  <% if article_count > 15 %>
+    <a class="nav" href="/?page=<%=(@page + 1) %>">Next page -></a>
+  <%end%>
 </div>
 

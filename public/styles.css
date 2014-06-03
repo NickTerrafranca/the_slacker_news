@@ -102,8 +102,18 @@ body {
 .each_article a:hover {
   text-decoration: underline;
   font-size: 14px;
-  color: red;
+  color: #ff4d00;
 }
+
+.article_comment a {
+  text-decoration: none;
+  color: #000000
+}
+.article_comment a:hover {
+  color: #ff4d00;
+  text-decoration: underline;
+}
+
 .comment_field {
   margin: 0px 100px 0px 100px;
   background: #b8ffb7
@@ -115,8 +125,17 @@ body {
   margin: 0px 100px 0px 100px;
   background: #f6f7ef;
 }
+.page_nav a {
+  margin: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000
+}
 
-
+.page_nav a:hover {
+  color: #ff4d00;
+  text-decoration: underline;
+}
 
 
 

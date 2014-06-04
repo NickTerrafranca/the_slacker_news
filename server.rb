@@ -5,7 +5,7 @@ require_relative 'methods'
 get '/' do
   @page = params[:page].to_i
   @content = display_all_articles(@page)
-  @content.count #????
+  # @content.count #????
   erb :index
 end
 
@@ -38,6 +38,17 @@ post '/articles/:id/comment' do
   end
   display_comment
   redirect "/articles/#{article_id}"
+end
+
+get '/search' do
+  @page = params[:page].to_i
+  article_query = params[:query]
+  @search_result = search_articles(article_query, @page).to_a
+  erb :search_results
+end
+
+get '/login' do
+erb :login_page
 end
 
 # Add article  title search

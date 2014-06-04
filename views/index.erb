@@ -1,6 +1,5 @@
 <div class="article-container">
   <ol>
-    <% article_count = 0%>
     <% @content.each do |article| %>
       <li>
         <span class="article_title">
@@ -27,7 +26,6 @@
         </div>
       </li>
       <br>
-      <% article_count += 1%>
     <% end %>
   </ol>
 </div>

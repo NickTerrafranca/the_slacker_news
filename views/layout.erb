@@ -13,17 +13,28 @@
       <li class="title">
         <a href="/">Slacker News</a>
       </li>
-
-       <li class="submit">
+      <li class="submit">
         <a href="/articles">Submit Article</a>
+      </li>
+      <li class="login">
+        <a href="">Login / Sign-up</a>
       </li>
     </ul>
   </div>
+   <div id="search_box">
+
+
+          <form action="/articles" method="post">
+          <label for="submittion_title">Search Article</label>
+            <input name="q" type="search">
+            <input type="submit" value="Go">
+          </form>
+
+      </div>
 </header>
-
-
-
   <%= yield %>
-
 </body>
 </html>
+
+
+

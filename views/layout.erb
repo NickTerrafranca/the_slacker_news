@@ -16,21 +16,26 @@
       <li class="submit">
         <a href="/articles">Submit Article</a>
       </li>
-      <li class="login">
-        <a href="">Login / Sign-up</a>
+      <li class="/login">
+        <a href="/login">Login / Sign-up</a>
       </li>
     </ul>
   </div>
-   <div id="search_box">
 
 
-          <form action="/articles" method="post">
-          <label for="submittion_title">Search Article</label>
-            <input name="q" type="search">
-            <input type="submit" value="Go">
-          </form>
 
-      </div>
+  <div id="search_box">
+    <form action="/search" method="get">
+      <label for="submittion_title">Search Articles</label>
+      <input name="query" type="search">
+      <input type="submit" value="Go">
+    </form>
+  </div>
+
+
+
+
+
 </header>
   <%= yield %>
 </body>

@@ -28,17 +28,14 @@
       </li>
     <%end%>
   </ol>
-
 </div>
 
 <div class="comment_field">
   <p>Comment on: <%= "#{@article['title']} "%></p>
   <form action="/articles/<%= @article['id'] %>/comment" method="post">
     <label for="comment">Leave a Comment:</label>
-
-      <input type="text" id="comment" name="comment" />
-
-    <input type="submit" value="Submit" />
+    <input type="text" id="comment" name="comment">
+    <input type="submit" value="Submit">
   </form>
 </div>
-<!-- #.strftime('%x, %I:%M%p') -->
+

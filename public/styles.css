@@ -9,6 +9,7 @@ body {
   margin: 0px 100px 0px 100px;
   padding: 10px;
   background: #b8ffb7;
+  display: block;
 
 }
 #description{
@@ -20,6 +21,11 @@ body {
   color: #000000;
   font-weight: bold;
 }
+.title a {
+  font-size: 15px;
+  text-decoration: bold;
+}
+
 
 .navigation-container {
   margin: 0px 100px 0px 100px;
@@ -39,9 +45,14 @@ body {
   text-decoration: none;
 }
 
-.title a {
-  font-size: 15px;
-  text-decoration: bold;
+.nav > li > a:hover {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+#search_box{
+  margin: 0px 100px 0px 100px;
+  background: #f6f7ef;
 }
 
 .article-container {
@@ -140,3 +151,14 @@ body {
   text-decoration: underline;
 }
 
+#form_title{
+display: block;
+}
+
+#form_url{
+display: block;
+}
+
+#form_description{
+display: block;
+}

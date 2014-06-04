@@ -37,7 +37,7 @@ body {
 .nav li {
   display: inline-block;
   list-style: none;
-  padding: 4px;
+  padding: 5px;
 }
 
 .nav > li > a {
@@ -161,4 +161,9 @@ display: block;
 
 #form_description{
 display: block;
+}
+
+#login{
+  margin: 0px 100px 0px 100px;
+  background: #f6f7ef;
 }

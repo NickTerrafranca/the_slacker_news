@@ -9,13 +9,19 @@ def db_connection
   end
 end
 
+# def search_articles(params_query)
+#   if params[:query]
+#     search_term = "WHERE movies.title ILIKE '%#{params[:query]}%' or movies.synopsis ILIKE '%#{params[:query]}%'"
+#   end
+# end
 
-
-def display_all_articles
-  query = 'SELECT articles.id, articles.title, articles.url, articles.description, articles.created_at
+def display_all_articles(page_param)
+  page = page_param
+  query = "SELECT articles.id, articles.title, articles.url, articles.description, articles.created_at
   FROM articles
   ORDER BY created_at DESC
-  LIMIT 15;'
+  LIMIT 15
+  OFFSET (15 * #{page});"
   content = db_connection do |conn|
     conn.exec(query)
   end

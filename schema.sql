@@ -45,7 +45,7 @@ queries
 
 SELECT * FROM articles;
 SELECT * FROM comments;
-DELETE FROM articles WHERE ________;
+DELETE FROM articles WHERE body IS NULL;
 UPDATE table_name SET column_name = new_value WHERE conditional_filter;
 UPDATE articles SET title = This is way cool! WHERE id = 1;
 

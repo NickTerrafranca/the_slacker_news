@@ -5,7 +5,7 @@ require_relative 'methods'
 get '/' do
   @page = params[:page].to_i
   @content = display_all_articles(@page)
-  @content.count
+  @content.count #????
   erb :index
 end
 
@@ -20,11 +20,14 @@ get '/articles/:id' do
   erb :article
 end
 
-post '/articles/posts' do
-  unless params["title"] == '' || params["url"] == ''
+post '/articles' do
+  if params["title"] == '' || params["url"] == ''
+    @content_error = "Please complete the form fields"
+    redirect '/articles?error=Please+complete+the+form+fields'
+  else
     save_article(params["title"], params["url"], params["description"])
+    redirect '/'
   end
-  redirect '/'
 end
 
 post '/articles/:id/comment' do
@@ -36,4 +39,24 @@ post '/articles/:id/comment' do
   display_comment
   redirect "/articles/#{article_id}"
 end
-#add title search
+
+# Add article  title search
+
+# Format article and comment time
+
+# Display number of comments
+
+# If I specify an invalid URL, I receive an error message,
+#   and the submission form is re-rendered with the details I have
+#   previously submitted.
+
+# The submitted article is not saved in any of the above cases.
+
+
+# If I specify a url that has already been submitted, I receive an
+#   error message, and the submission form is re-rendered with the
+#   details I have previously submitted.
+
+# The submitted article is not saved in the above case.
+
+# Article url shortener

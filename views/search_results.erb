@@ -1,0 +1,37 @@
+<div class="article-container">
+  <ol>
+    <% @search_result.each do |article| %>
+      <li>
+        <span class="article_title">
+           <%= "#{article['title']}" %>
+        </span>
+
+        <span class="article_url">
+          <a href="<%= "#{article['url']}" %>" target="_blank">
+            <%= "#{article['url']}" %>
+          </a>
+        </span>
+
+        <div class="article-details">
+          <%="#{article['description']}"%>
+        </div>
+        <div class="article-time-stamp">
+          <%= "#{article['created_at']}" %>
+        </div>
+
+        <div class="article_comment">
+          <a href="<%= "/articles/#{article["id"]}" %>">
+            Comment
+          </a>
+        </div>
+      </li>
+      <br>
+    <% end %>
+  </ol>
+</div>
+<div class="page_nav">
+  <%if @page >= 1%>
+    <a class="nav" href="/?page=<%=(@page - 1) %>"><-Previous page</a>
+  <%end%>
+  <a class="nav" href="/?page=<%=(@page + 1) %>">Next page -></a>
+</div>

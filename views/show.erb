@@ -1,16 +1,20 @@
 <div class="form_container">
   <form action="/articles" method="post">
+
     <div id="form_title">
-      <label for="submittion_title">Submit an Article  -  Title:</label>
+    <h3>Submit an Article</h3>
+    <p>Title</p>
       <input type="text" id="submittion_title" name="title">
     </div>
+
     <div id="form_url">
-      <label for="url">Submission URL:</label>
-      <input type="url" id="url" name="url" />
+    <p>Submission URL</p>
+      <input type="url" id="url" name="url">
     </div>
+
     <div id="form_description">
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description">
+    <p>Description</p>
+      <textarea rows="5" cols="20" input type="text" id="description" name="description" ></textarea>
     </div>
     <input type="submit" >
   </form>

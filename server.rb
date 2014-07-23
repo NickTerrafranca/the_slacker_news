@@ -47,11 +47,9 @@ get '/search' do
   erb :search_results
 end
 
-get '/login' do
-erb :login_page
+  get '/login' do
+  erb :login_page
 end
-
-# Add article  title search
 
 # Format article and comment time
 
@@ -61,13 +59,8 @@ end
 #   and the submission form is re-rendered with the details I have
 #   previously submitted.
 
-# The submitted article is not saved in any of the above cases.
-
-
 # If I specify a url that has already been submitted, I receive an
 #   error message, and the submission form is re-rendered with the
 #   details I have previously submitted.
-
-# The submitted article is not saved in the above case.
 
 # Article url shortener

@@ -1,4 +1,4 @@
-require 'pry'
+erequire 'pry'
 require 'sinatra'
 require_relative 'methods'
 
